@@ -1,0 +1,32 @@
+#include <stdio.h>
+long unsigned Fact(unsigned n);
+int main() 
+{
+    unsigned n;
+    long unsigned sum=0;
+    printf("Input n(n>0):");
+    scanf("%u",&n);
+    sum=Fact(n);
+    printf("sum = %lu\n",sum);
+    return 0;
+}
+
+long unsigned Fact(unsigned n)
+{
+    long unsigned sum=0;
+    for(unsigned i=1;i<=n;i++)
+        {
+            unsigned y=1;
+            for(unsigned m=1;m<=i;m++)
+                {
+                    y*=m;
+                }
+            sum+=y;
+        }
+    return sum;
+}
+/*for(unsigned i = 1; i <= n; i++) //循环从1到n
+    {   factorial *= i; //利用连续性计算i的阶乘
+        sum += factorial; // 将i 的阶乘加到 sum 上
+    }
+return sum;//返回计算出的阶乘之和*/
